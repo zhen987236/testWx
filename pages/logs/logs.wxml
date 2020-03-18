@@ -1,0 +1,39 @@
+<!--logs.wxml-->
+<!-- <view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view> -->
+<!-- <text>你好hellow</text>
+<button size="mini" >按钮</button> -->
+
+<view class='title'> {{message}} </view>
+<text class='sys'>我显示出来的是蓝色</text>
+<view wx:for="{{array}}"> {{item}} </view>
+
+<!-- wx的循环语句 -->
+<view wx:if="{{view==pack}}">pack</view>
+<view wx:elif="{{view==apple}}">apple</view>
+<view wx:else="{{view==orange}}">orange</view>
+
+<!-- 模板 -->
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+<!-- 组件属性 -->
+<view id="item-{{id}}"> </view>
+<!-- 控制属性 -->
+<view wx:if="{{condition}}">显示的是正确的</view>
+<view wx:elif="{{condition==false}}">显示的是错误的</view>
+<!-- 关键字 当属性为true的时候直接打上√-->
+<checkbox checked="{{true}}"> </checkbox>
+<!-- 三元运算 当结果为true时显示view的值，为false的时候不显示-->
+<view hidden="{{5+3<10? true: false}}"> 111</view>
+<!-- 算数计算 -->
+<view> {{a + b}} + {{c}} + d </view>
